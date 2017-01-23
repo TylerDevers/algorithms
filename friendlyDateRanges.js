@@ -25,8 +25,8 @@ function makeFriendlyDates(arr) {
     var startMonth = months[parseInt(startArr[1])], endMonth = months[parseInt(endArr[1])];
     var startYear = parseInt(startArr[0]), endYear = parseInt(endArr[0]);
     var startDay = days[parseInt(startArr[2])], endDay = days[parseInt(endArr[2])];
-    
-    if (end.year == start.year && start.year && start.year == 2016){ //if years match
+    //handles dates that occur within 2016
+    if (end.year == start.year && start.year == 2016){ //if years match
         if (end.month == start.month) { //if months match
             if (end.day == start.day){ // if days match
                 string1 = startMonth + ' ' + startDay + ', ' + startYear;
@@ -46,26 +46,47 @@ function makeFriendlyDates(arr) {
         }
     //start year is 2016, but still less than 12 months total time difference    
     } else if (end.year == start.year && start.year > 2016) {
-        string1 = startMonth + ' ' + startDay + ', ' + startYear;
-        string2 = endMonth + ' ' + endDay;
-        result.push(string1);
-        result.push(string2);
+        if (end.month == start.month) { //if months match
+            if (end.day == start.day){ // if days match
+                string1 = startMonth + ' ' + startDay + ', ' + startYear;
+                result.push(string1);
+            } else { //if year/month matches but days are different
+                string1 = startMonth + ' ' + startDay + ', ' + startyear;
+                string2 = endDay;
+                result.push(string1);
+                result.push(string2);
+            }
+             
+        } else { //if year matches but months are different
+                string1 = startMonth + ' ' + startDay + ', ' + startYear;
+                string2 = endMonth + ' ' + endDay;
+                result.push(string1);
+                result.push(string2);
+        }
     }else if ((end.year - 2016 == 1) && (end.month <= start.month)){ 
         string1 = startMonth + ' ' + startDay;
         string2 = endMonth + ' ' + endDay;
         result.push(string1);
         result.push(string2);
     //for start years greater than current year
-    } else if ((end.year - start.year == 1) && (end.month <= start.month)){ 
+    } else if ((end.year - start.year == 1) && (end.month <= start.month) && (end.day<start.day)){ 
         string1 = startMonth + ' ' + startDay + ', ' + startYear;
         string2 = endMonth + ' ' + endDay;
         result.push(string1);
         result.push(string2);
+        console.log('its 1');
+    } else if ((end.year - start.year == 1) && (end.month <= start.month) && (end.day>start.day)){ 
+        string1 = startMonth + ' ' + startDay + ', ' + startYear;
+        string2 = endMonth + ' ' + endDay + ', ' + endYear;
+        result.push(string1);
+        result.push(string2);
+        console.log('its 3');
     } else {
         string1 = startMonth + ' ' + startDay + ', ' + startYear;
         string2 = endMonth + ' ' + endDay + ', ' + endYear;
         result.push(string1);
         result.push(string2);
+        console.log('its 2');
     }
     console.log(result);
     return result;

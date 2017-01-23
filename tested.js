@@ -26,7 +26,7 @@ function makeFriendlyDates(arr) {
     var startYear = parseInt(startArr[0]), endYear = parseInt(endArr[0]);
     var startDay = days[parseInt(startArr[2])], endDay = days[parseInt(endArr[2])];
     
-    if (end.year == start.year && start.year && start.year == 2016){ //if years match
+    if (end.year == start.year && start.year == 2016){ //if years match
         if (end.month == start.month) { //if months match
             if (end.day == start.day){ // if days match
                 string1 = startMonth + ' ' + startDay + ', ' + startYear;
