@@ -1,8 +1,9 @@
 
 var Person = function (firstAndLast) {
-    var fullName = firstAndLast, nameArr = fullName.split(' ');
-    var firstName = nameArr[0], lastName = nameArr[1];
-    this.getFirstName = function () {
+    //initialize variables, do not declare. variables will be set later.
+    var name, nameArr, firstName, lastName;
+    
+    this.getFirstName = function () {        
         console.log(firstName);
         return firstName;
     };
@@ -11,6 +12,7 @@ var Person = function (firstAndLast) {
         return lastName;
     };
     this.getFullName = function () {
+        //don't return name, concatenate instead
         console.log(firstName + ' ' + lastName);
         return firstName + ' ' + lastName;        
     };
@@ -21,13 +23,18 @@ var Person = function (firstAndLast) {
         lastName = last;
     };
     this.setFullName = function (firstAndLast) {
-        fullName = firstAndLast;
-        return fullName;
+        //set all variables here. This will allow the changing of everything later.
+        name = firstAndLast; 
+        nameArr = firstAndLast.split(' ');
+        firstName = nameArr[0];
+        lastName = nameArr[1];
     };
+    //call the setFullName method to delcare all variables
+    this.setFullName(firstAndLast);
 };
 
 var bob = new Person('Bob Ross');
-bob.setFullName("Haskell Curry");
+bob.setFirstName("Haskell");
 bob.getFullName();
 
 /*
