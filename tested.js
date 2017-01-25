@@ -1,61 +1,57 @@
-
-var Person = function (firstAndLast) {
-    var name = firstAndLast;
-    var nameArr = firstAndLast.split(' '), firstName = nameArr[0], lastName = nameArr[1];
+function pairwise(arr, arg) {
+    var arrC = Array.from(arr);
+    console.log(arrC);
+    var result= [];
+    var counter = 0;
+    for (var i = 0; i < arrC.length; i++){
+        arrC.forEach(function(x){
+            var set = [];
+            var sum = arrC[i] + x; 
+            if (sum == arg) {
+                set = [arrC[i], x];
+                result.push(set);
+                delete arrC[i];
+                delete arrC[arrC.indexOf(x)];
+                console.log(set, arrC);
+            }
+        });
+    counter = result.reduce
+    }
     
-    this.getFirstName = function () {        
-        console.log(firstName);
-        return firstName;
-    };
-    this.getLastName = function () {
-        console.log(lastName);
-        return lastName;
-    };
-    this.getFullName = function () {
-        console.log(name);
-        return name;        
-    };
-    this.setFirstName = function (first) {
-        firstName = first;
-    };
-    this.setLastName = function (last) {
-        lastName = last;
-    };
-    this.setFullName = function (firstAndLast) {
-        name = firstAndLast;
-    };
-    this.setFullName(firstAndLast);
-};
+    //console.log(red);
+    //return arg;
+}
 
-var bob = new Person('Bob Ross');
-bob.setFullName("Haskell Curry");
-bob.getLastName();
+pairwise([1,4,2,3,0,5], 5);
 
 /*
-Make a Person
-Fill in the object constructor with the following methods below:
+Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.
 
-getFirstName()
-getLastName()
-getFullName()
-setFirstName(first)
-setLastName(last)
-setFullName(firstAndLast)
-Run the tests to see the expected output for each method.
+If multiple pairs are possible that have the same numeric elements but different indices, return the smallest sum of indices. Once an element has been used, it cannot be reused to pair with another.
 
-The methods that take an argument must accept only one argument and it has to be a string.
+For example pairwise([7, 9, 11, 13, 15], 20) returns 6. The pairs that sum to 20 are [7, 13] and [9, 11]. We can then write out the array with their indices and values.
 
-These methods must be the only available means of interacting with the object.
+Index	0	1	2	3	4
+Value	7	9	11	13	15
+Below we'll take their corresponding indices and add them.
+
+7 + 13 = 20 → Indices 0 + 3 = 3
+9 + 11 = 20 → Indices 1 + 2 = 3
+3 + 3 = 6 → Return 6
 
 Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
 
 Here are some helpful links:
 
-Closures
-Details of the Object Model
+Array.prototype.reduce()
 Run tests (ctrl + enter)
   Reset	  Help	  Bug
 
-TypeError: bob.getFullName is not a function
-*/
+7
 
+pairwise([1, 4, 2, 3, 0, 5], 7) should return 11.
+pairwise([1, 3, 2, 4], 4) should return 1.
+pairwise([1, 1, 1], 2) should return 1.
+pairwise([0, 0, 0, 0, 1, 1], 1) should return 10.
+pairwise([], 100) should return 0.
+*/

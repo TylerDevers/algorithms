@@ -1,3 +1,5 @@
+pop()
+shift()
 test()
 sort
 splice
@@ -22,6 +24,12 @@ replace
 split
 slice
 regExp
+
+pop()
+the pop method removes the last element from an array and returns that element.
+
+shift()
+the shift method removes the first element of an array, shortening the length of the array.
 
 test()
 regex.test() - the test method will test a regexp, checking for a match between a string the regex
