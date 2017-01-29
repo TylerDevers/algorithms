@@ -1,3 +1,4 @@
+delete
 pop()
 shift()
 test()
@@ -24,6 +25,12 @@ replace
 split
 slice
 regExp
+
+delete
+//the delete opereator can be used to delete an expression. when used on an array, it will 
+//replace the element with undefined and will not change the length.
+    var trees = ["redwood","bay","cedar","oak","maple"];
+    delete trees[3];
 
 pop()
 the pop method removes the last element from an array and returns that element.
