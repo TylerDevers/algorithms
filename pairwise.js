@@ -1,42 +1,21 @@
 function pairwise(arr, arg) {
-    var arrCpy = Array.from(arr); //copy arr to modify as needed.
+    var arrCpy = Array.from(arr), //copy arr to modify as needed.
     //console.log(arrCpy);
-    var elementResult= [];//store the elements that pass the test here
-    var indexResult = [];// store the index value of elements that pass test here.
-    var counter; //use to add index values at end
+    elementResult = [],//store the elements that pass the test here
+    indexResult = [],// store the index value of elements that pass test here.
+    counter; //use to add index values at end
     //iterate over arrCpy twice to make sure intial elements don't get left out
     for (var i = 0; i < arrCpy.length; i++){
         //2nd iteration allows each element to be compared to entire array
         //if test passes, push element to result, then delete elements that were used from arrCpy
-        arrCpy.forEach(function(x){
-            var set = [];
-            var sum = arrCpy[i] + x; 
-            if (sum == arg) {
-                //set = [arrCpy[i], x];
-                elementResult.push(arrCpy[i]);
-                elementResult.push(x);
-                delete arrCpy[i];
-                delete arrCpy[arrCpy.indexOf(x)];
-                //console.log(arrCpy);
-            }
-        });
+        for (var y = 0; y < arrCpy.length; y++) {
+            
+        }
     }
-    indexResult = elementResult.map(function(x){
-        //note: return index values if arr, since arrCpy has been modified.
-        return arr.indexOf(x);
-    });
-    
-    counter = indexResult.reduce(function(a, b){
-       return a + b; 
-    });
-    
-    
-    console.log(arr, ' index : ' + indexResult,' element : ' + elementResult,'counter '+ counter);
-    return counter;
     
 }
 
-pairwise([1, 3, 2, 4], 4);
+pairwise([1, 1, 1], 2);
 
 /*
 Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.

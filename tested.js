@@ -1,28 +1,42 @@
 function pairwise(arr, arg) {
-    var arrC = Array.from(arr);
-    console.log(arrC);
-    var result= [];
-    var counter = 0;
-    for (var i = 0; i < arrC.length; i++){
-        arrC.forEach(function(x){
+    var arrCpy = Array.from(arr); //copy arr to modify as needed.
+    //console.log(arrCpy);
+    var elementResult= [];//store the elements that pass the test here
+    var indexResult = [];// store the index value of elements that pass test here.
+    var counter; //use to add index values at end
+    //iterate over arrCpy twice to make sure intial elements don't get left out
+    for (var i = 0; i < arrCpy.length; i++){
+        //2nd iteration allows each element to be compared to entire array
+        //if test passes, push element to result, then delete elements that were used from arrCpy
+        arrCpy.forEach(function(x){
             var set = [];
-            var sum = arrC[i] + x; 
+            var sum = arrCpy[i] + x; 
             if (sum == arg) {
-                set = [arrC[i], x];
-                result.push(set);
-                delete arrC[i];
-                delete arrC[arrC.indexOf(x)];
-                console.log(set, arrC);
+                //set = [arrCpy[i], x];
+                elementResult.push(arrCpy[i]);
+                elementResult.push(x);
+                delete arrCpy[i];
+                delete arrCpy[arrCpy.indexOf(x)];
+                //console.log(arrCpy);
             }
         });
-    counter = result.reduce
     }
+    indexResult = elementResult.map(function(x){
+        //note: return index values if arr, since arrCpy has been modified.
+        return arr.indexOf(x);
+    });
     
-    //console.log(red);
-    //return arg;
+    counter = indexResult.reduce(function(a, b){
+       return a + b; 
+    });
+    
+    
+    console.log(arr, ' index : ' + indexResult,' element : ' + elementResult,'counter '+ counter);
+    return counter;
+    
 }
 
-pairwise([1,4,2,3,0,5], 5);
+pairwise([1, 4, 2, 3, 0, 5], 7);
 
 /*
 Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.
