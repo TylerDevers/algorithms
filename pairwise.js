@@ -5,17 +5,31 @@ function pairwise(arr, arg) {
     indexResult = [],// store the index value of elements that pass test here.
     counter; //use to add index values at end
     //iterate over arrCpy twice to make sure intial elements don't get left out
-    for (var i = 0; i < arrCpy.length; i++){
+    for (var i = 0; i < arr.length; i++){
         //2nd iteration allows each element to be compared to entire array
         //if test passes, push element to result, then delete elements that were used from arrCpy
-        for (var y = 0; y < arrCpy.length; y++) {
+        for (var y = 0; y < arr.length; y++) {
             
+            if (i != y) { // if index is the same, skip it.
+                var sum = arr[i] + arr[y];
+                if (sum == arg && indexResult.indexOf(i) < 0 && indexResult.indexOf(y)) {
+                    elementResult.push(arr[i], arr[y]);
+                    indexResult.push(arr.indexOf(i), arr.indexOf(y));
+                }
+            }
         }
     }
+    indexResult.reduce(function(a,b){
+        return a+ b;
+    });
+    
+    console.log(elementResult);
+    console.log(indexResult, counter);
+
     
 }
 
-pairwise([1, 1, 1], 2);
+pairwise([1, 4, 2, 3, 0, 5], 7);
 
 /*
 Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.
