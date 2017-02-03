@@ -1,12 +1,32 @@
-.justify-right {
+/*define the perimeter of the calculator base*/
+#calculator-base {
+    position: relative;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10%;
+    background: palegoldenrod;
+}
+
+/*format the display*/
+#display {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 5px auto;
     text-align: right;
 }
 
-.full {
-    width: 100%;
-    
+/*format the buttons*/
+input[type=button] {
+    width: 20%;
+    margin: 2%;
+    font-size: 18px;
+    background: light grey;
+    border-radius: 4px;
 }
 
-.quarter-fill {
-    width: 24%;
+body {
+    background: #666666;
 }

@@ -6,41 +6,43 @@
 	<!-- for bootstraps mobile first touch zoom accuracy -->
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 	
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-	<!-- bootstrap library-->	
+	<!-- bootstrap library-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    
 	<!-- local css file -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link type="text/css" src="style.css">
 	<script src="calc.js"></script>
 	
 </head>
 <body>
-    <div class='container'>
-    <form name='calc' class="col-md-6 col-md-offset-3">
-        <input type='text' name='screen' class='justify-right full' placeholder='0'><br>
-        <input type="button" name='button7' class='quarter-fill' value='7' onclick='calcDisplay(button7.value)'>
-        <input type="button" name='button8' class='quarter-fill' value='8' onclick='calcDisplay(button8.value)'>
-        <input type="button" name='button9' class='quarter-fill' value='9' onclick='calcDisplay(button9.value)'>
-        <input type="button" name='buttonDivide' class='quarter-fill' value='/' onclick='calcDisplay(buttonDivide.value)'><br>
-        <input type="button" name='button4' class='quarter-fill' value='4' onclick='calcDisplay(button4.value)'>
-        <input type="button" name='button5' class='quarter-fill' value='5' onclick='calcDisplay(button5.value)'>
-        <input type="button" name='button6' class='quarter-fill' value='6' onclick='calcDisplay(button6.value)'>
-        <input type="button" name='buttonTimes' class='quarter-fill' value='*' onclick='calcDisplay(buttonTimes.value)'><br>
-        <input type="button" name='button1' class='quarter-fill' value='1' onclick='calcDisplay(button1.value)'>
-        <input type="button" name='button2' class='quarter-fill' value='2' onclick='calcDisplay(button2.value)'>
-        <input type="button" name='button3' class='quarter-fill' value='3' onclick='calcDisplay(button3.value)'>
-        <input type="button" name='buttonMinus' class='quarter-fill' value='-' onclick='calcDisplay(buttonMinus.value)'><br>
-        <input type="button" name='button0' class='quarter-fill' value='0' onclick='calcDisplay(button0.value)'>
-        <input type="button" name='buttonDecimal' class='quarter-fill' value='.' onclick='calcDisplay(buttonDecimal.value)'>
-        <input type='button' name='buttonC' class='quarter-fill' value='C' onclick='calc.screen.value = null'>
-        <input type='button' name='buttonPlus' class='quarter-fill' value='+' onclick='calcDisplay(buttonPlus.value)'><br>
-        <input type="button" name='buttonEqual' class='full' value='=' onclick='crunchNumbers()'>
-    </form>
+    <div id='calculator-base'>
+        <form id='calculator' name='calculator'>
+            <input type='text' id='display' name='screen' placeholder='0'>
+            <br>
+
+            <input type="button" name='button7' value='7' onclick='calcDisplay(button7.value)'>
+            <input type="button" name='button8' value='8' onclick='calcDisplay(button8.value)'>
+            <input type="button" name='button9' value='9' onclick='calcDisplay(button9.value)'>
+            <input type="button" name='buttonDivide' value='/' onclick='calcDisplay(buttonDivide.value)'>
+            <br>
+
+            <input type="button" name='button4' value='4' onclick='calcDisplay(button4.value)'>
+            <input type="button" name='button5' value='5' onclick='calcDisplay(button5.value)'>
+            <input type="button" name='button6' value='6' onclick='calcDisplay(button6.value)'>
+            <input type="button" name='buttonTimes' value='*' onclick='calcDisplay(buttonTimes.value)'>
+            <br>
+
+            <input type="button" name='button1' value='1' onclick='calcDisplay(button1.value)'>
+            <input type="button" name='button2' value='2' onclick='calcDisplay(button2.value)'>
+            <input type="button" name='button3' value='3' onclick='calcDisplay(button3.value)'>
+            <input type="button" name='buttonMinus' value='-' onclick='calcDisplay(buttonMinus.value)'>
+            <br>
+
+            <input type="button" name='button0' value='0' onclick='calcDisplay(button0.value)'>
+            <input type='button' name='buttonC' value='C' onclick='calc.screen.value = null'>
+            <input type="button" name='buttonEqual' value='=' onclick='crunchNumbers()'>
+            <input type='button' name='buttonPlus' value='+' onclick='calcDisplay(buttonPlus.value)'>
+        </form>
     </div>
 </body>
 
