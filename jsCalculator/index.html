@@ -11,7 +11,8 @@
     
 	<!-- local css file -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="calc.js"></script>
+    
+    <script type="text/javascript" src='calc.js'></script>
 	
 </head>
 <body>
@@ -20,30 +21,31 @@
             <input type='text' id='display' name='screen' placeholder='0'>
             <br>
 
-            <input type="button" name='button7' value='7' onclick='calcDisplay(button7.value)'>
-            <input type="button" name='button8' value='8' onclick='calcDisplay(button8.value)'>
-            <input type="button" name='button9' value='9' onclick='calcDisplay(button9.value)'>
-            <input type="button" name='buttonDivide' value='/' onclick='calcDisplay(buttonDivide.value)'>
+            <input type="button" name='button7' value='7' onclick='calc(button7.value)'>
+            <input type="button" name='button8' value='8' onclick='calc(button8.value)'>
+            <input type="button" name='button9' value='9' onclick='calc(button9.value)'>
+            <input type="button" name='buttonDivide' value='/' onclick='calc(buttonDivide.value)'>
             <br>
 
-            <input type="button" name='button4' value='4' onclick='calcDisplay(button4.value)'>
-            <input type="button" name='button5' value='5' onclick='calcDisplay(button5.value)'>
-            <input type="button" name='button6' value='6' onclick='calcDisplay(button6.value)'>
-            <input type="button" name='buttonTimes' value='*' onclick='calcDisplay(buttonTimes.value)'>
+            <input type="button" name='button4' value='4' onclick='calc(button4.value)'>
+            <input type="button" name='button5' value='5' onclick='calc(button5.value)'>
+            <input type="button" name='button6' value='6' onclick='calc(button6.value)'>
+            <input type="button" name='buttonTimes' value='*' onclick='calc(buttonTimes.value)'>
             <br>
 
-            <input type="button" name='button1' value='1' onclick='calcDisplay(button1.value)'>
-            <input type="button" name='button2' value='2' onclick='calcDisplay(button2.value)'>
-            <input type="button" name='button3' value='3' onclick='calcDisplay(button3.value)'>
-            <input type="button" name='buttonMinus' value='-' onclick='calcDisplay(buttonMinus.value)'>
+            <input type="button" name='button1' value='1' onclick='calc(button1.value)'>
+            <input type="button" name='button2' value='2' onclick='calc(button2.value)'>
+            <input type="button" name='button3' value='3' onclick='calc(button3.value)'>
+            <input type="button" name='buttonMinus' value='-' onclick='calc(buttonMinus.value)'>
             <br>
 
-            <input type="button" name='button0' value='0' onclick='calcDisplay(button0.value)'>
-            <input type='button' name='buttonC' value='C' onclick='calc.screen.value = null'>
+            <input type="button" name='button0' value='0' onclick='calc(button0.value)'>
+            <input type='button' name='buttonC' value='C' onclick='calculator.screen.value = null'>
             <input type="button" name='buttonEqual' value='=' onclick='crunchNumbers()'>
-            <input type='button' name='buttonPlus' value='+' onclick='calcDisplay(buttonPlus.value)'>
+            <input type='button' name='buttonPlus' value='+' onclick='calc(buttonPlus.value)'>
         </form>
     </div>
+            
 </body>
 
 </html>
