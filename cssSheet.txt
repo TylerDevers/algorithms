@@ -1,0 +1,25 @@
+position: 
+  types: absolute, relative, fixed, static
+  
+  position: static; static is the default position for all elements. static simply means the element will
+  simply flow into the page as it normally would.
+  
+  position: relative; setting relative means 'relative to itself'. setting relative but not setting any
+  other positioning attributes (top, bottom, left, right) will have no affect. It will remain in the same
+  spot as static position. If we do change something like top: 10px; as well as setting relative, it will
+  move the element down from where it normally would be, leaving a gap at the top and covering the element below it. Relative affects the z-index, meaning the element will now appear on top of the
+  statically positioned elements.
+  
+  position: absolute; setting absolute will allow us to place the element anywhere we want it using 
+  the other positioning attributes top, bottom, left, right. The element will be moved relative to the
+  page. We can position an element relative to its parent element by giving the parent element a 
+  position: relative; . Setting absolute will remove the element from the flow of the page, this element will not affect the flow of other elements or be effected by them. 
+  
+  position: fixed; setting fixed position positions the element relative to the viewport/browser.
+  
+display:
+  types:
+  display: block; elements set to block are a rectangle of pixels. setting to block will allow us to set a width and a height.
+
+Float:
+Clear:
