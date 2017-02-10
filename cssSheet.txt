@@ -1,3 +1,25 @@
+position
+margin
+display
+float
+clear 
+centering guide
+
+
+centering guide
+  https://css-tricks.com/centering-css-complete-guide/
+  
+  .center-inline-element {
+    text-align: center;
+  } 
+    the above will center inline elements, like p tags, or span tags, within a block parent.
+  
+  .center-block-element {
+    margin: 0 auto;
+    width: 200px;
+  }
+    this will center a block element. It is short hand for setting margin left and margin right to auto. A width must also be set, other wise the width will be 100% making centering impossible.
+    
 position: 
   types: absolute, relative, fixed, static
   
@@ -16,10 +38,25 @@ position:
   position: relative; . Setting absolute will remove the element from the flow of the page, this element will not affect the flow of other elements or be effected by them. 
   
   position: fixed; setting fixed position positions the element relative to the viewport/browser.
+
+margin:
+  margin is the outermost portion of the box model. margin: 0 2px 0 2px; this would set the margin for the top, right, bottom, left and in that order. margin can be used to center a div horizontally using 'auto'. margin: 0 auto; will center the element horizontally if a width attribute has been defined as well. the 0 applies to the top and bottom margins, the auto applies to the left and right. this does not work for vertical centering.
   
 display:
-  types:
-  display: block; elements set to block are a rectangle of pixels. setting to block will allow us to set a width and a height.
+  types: inline, inline-block, block, run-in, none
+  all elements are blocks. The display property determines how those blocks behave. The default value for all elements is inline.
+  display: inline; when you think inline, think span tag or em tag. these elements sit in a line, like a sentence. they can take padding or margin but they will not take width or height.
+  
+  display: inline-block; inline block is much like inline. elements will line up with the natural flow of text. Except, inline-block will accept width and height.
+  
+  display: block; elements set to block are a rectangle of pixels. setting to block will allow us to set a width and a height. Container elements like div, section, p tags, and lists are set to block by the browser. block elements do not sit inline, but rather vertically.
+  
+  display: run-in; run in does not work in firefox. Its an attempt to make a header element sit inline with its text.
+  
+  display: none; none totally removes the element from the page. though it is still in the dom.
 
-Float:
-Clear:
+float:
+  when float is applied to an element, the rest of the page will wrap around that element, like words around a picture. float can also be used to make general page layouts like a left gutter, etc.
+
+clear:
+  the clear property is the sister property to float. setting clear will prevent the element from wrapping the elements that have float set. So instead of sitting to the right of the floated element, the cleared element will appear below.

@@ -1,0 +1,24 @@
+
+
+.center {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.center-inline {
+  text-align: center;
+}
+
+#break {
+  float: left;
+}
+
+#session {
+  float:right;
+}
+
+#timer {
+  clear:both;
+  margin-top: 150px;;
+}
