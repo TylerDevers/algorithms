@@ -1,3 +1,6 @@
+setTimeout()
+clearInterval()
+setInterval()
 newDate()
 delete
 pop()
@@ -27,10 +30,22 @@ split
 slice
 regExp
 
+setTimeout()
+	setTimeout(function, milliseconds) will call a function after the desired milliseconds have passed.
+	just like setInterval, it can be canceled with a clearTimeout(setTimeoutID)
+	
+clearInterval()
+	clearInterval(intervalID) calling clear interval will stop the desired setInterval.
+	
+setInterval()
+	setInterval(function, milliseconds) will call a function every specified milliseconds. it will continue to do so until clearinterval() is called. when using setInterval, assign it to a variable to 
+	make clearingInterval easier.
+	
 newDate()
 	new date will get the current date. 
 	.getTime()
 			the get tiem method can be called on a date object to get the current time in milliseconds.
+			
 delete
 //the delete opereator can be used to delete an expression. when used on an array, it will 
 //replace the element with undefined and will not change the length.

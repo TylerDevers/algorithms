@@ -1,14 +1,26 @@
 var controls = true;
 var now = new Date().getTime();
+var count = setInterval(countdown, 1000);
+
+function countdown() {
+	var time = document.getElementById('session-time').innerHTML;
+	if (time > 0){
+		document.getElementById('session-time').innerHTML --;
+	} else if (time === 0) {
+		clearInterval(count);
+	}
+}
 
 function timer() {
 	//disable controls when session timer is clicked
 	if (controls === true) {
 		controls = false;
+		count;
 	} else {
 			controls = true;
+			clearInterval(count);
 	}
-	console.log(controls);
+	
 }
 
 
