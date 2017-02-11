@@ -16,7 +16,7 @@
   <!-- local css file -->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link type="text/css" src="style.css">
-  <script src="ext.js"></script>
+  
 
 </head>
 <body>
@@ -25,20 +25,21 @@
     <div class='center-inline'>
       <div id ='break' class='white'>
         <p>Break Length</p>
-        <span> - </span><span>0</span><span> + </span>
+        <span onclick='breakDown()'> - </span><span id="break-length">0</span><span onclick='breakUp()'> + </span>
       </div>
       
       <div id='session' class='white'>
         <p>Session Length</p>
-        <span> - </span><span>0</span><span> + </span>
+        <span onclick='sessionDown()'> - </span><span id='session-length'>0</span><span onclick='sessionUp()'> + </span>
       </div>
     </div>
     <div id='timer' class='center-inline white'>
       <p>Session</p>
       <br>
-      <p>time</p>
+      <p>0</p>
     </div>
   </div>
+  <script src="ext.js"></script>
 </body>
 
 </html>

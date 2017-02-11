@@ -1,3 +1,4 @@
+newDate()
 delete
 pop()
 shift()
@@ -26,6 +27,10 @@ split
 slice
 regExp
 
+newDate()
+	new date will get the current date. 
+	.getTime()
+			the get tiem method can be called on a date object to get the current time in milliseconds.
 delete
 //the delete opereator can be used to delete an expression. when used on an array, it will 
 //replace the element with undefined and will not change the length.
