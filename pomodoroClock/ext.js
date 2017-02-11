@@ -1,18 +1,40 @@
+var controls = true;
 var now = new Date().getTime();
-//console.log(countdown);
 
-//change value of session timer when plus or minus is clicked
+function timer() {
+	//disable controls when session timer is clicked
+	if (controls === true) {
+		controls = false;
+	} else {
+			controls = true;
+	}
+	console.log(controls);
+}
+
+
+//change value of session length when plus or minus is clicked. Also changes session timer value
 function sessionUp() {
-	document.getElementById('session-length').innerHTML ++;		
+	if (controls === true) {
+		document.getElementById('session-length').innerHTML ++;	
+		document.getElementById('session-time').innerHTML = document.getElementById('session-length').innerHTML;
+	}
 }
 function sessionDown() {
-	document.getElementById('session-length').innerHTML --;		
+		if (controls === true) {
+		document.getElementById('session-length').innerHTML --;		
+		document.getElementById('session-time').innerHTML = document.getElementById('session-length').innerHTML;
+	}
 }
 
 //change value of break time when plus or minus is clicked
 function breakUp() {
-	document.getElementById('break-length').innerHTML ++;		
+	if (controls === true) {
+		document.getElementById('break-length').innerHTML ++;		
+	}
 }
 function breakDown() {
-	document.getElementById('break-length').innerHTML --;		
+	if (controls === true) {
+		document.getElementById('break-length').innerHTML --;		
+	}
 }
+
