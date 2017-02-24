@@ -13,25 +13,39 @@ var count; // will hold setInterval() once timer is triggered
 function countdown() {
 	var sessionTime = document.getElementById('session-time').innerHTML;
 	var breakTime = document.getElementById('break-time').innerHTML;
+	var toggle = 0; // use to toggle between session an break countdown
+	//next move, create a looping function that will countdown session, than break, repeat
+	while (controls === false) {
+		if (toggle === 0) {
+			document.getElementById('session-time').innerHTML --;
+			console.log('session count down');
+			if (document.getElementById('session-time').innerHTML == 0) {
+					toggle = 1;
+					document.getElementById('session-time').innerHTML == breakTime;
+			}
+		}
+	}
+	/*
 	if (sessionTime > 0){
 		document.getElementById('session-time').innerHTML --;
 		console.log('countdown');
 	} else if (sessionTime === 0) {
 		clearInterval(count);
 	}
+	*/
 }
 
 //triggers when session timer is clicked
-function timer() {
+function trigger() {
 	//disable controls when session timer is clicked
 	if (controls === true) {
-		controls = false;
 		count = setInterval(countdown, 1000);
 		count;
+		controls = false;
 	} else {
-			controls = true;
-			clearInterval(count);
-			document.getElementById('session-time').innerHTML = document.getElementById('session-length').innerHTML;
+		clearInterval(count);
+		document.getElementById('session-time').innerHTML = document.getElementById('session-length').innerHTML;
+		controls = true;
 	}
 	
 }
