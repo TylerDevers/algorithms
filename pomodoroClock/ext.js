@@ -12,9 +12,12 @@ pointer.addEventListener('mouseleave', function (event) {
 */
 
 var count;
+var audio = new Audio('beep-06.mp3');
+var toggle = true;
 
 //start click controller
 function start() {
+	toggle = true;
 	count = setInterval(timer, 1000);
 }
 
@@ -22,31 +25,36 @@ function start() {
 function timer() {
 	var breakTime = document.getElementById('break-length');
 	var workTime = document.getElementById('work-length');
-	if (workTime.innerHTML > 0 ) {
+	if (workTime.innerHTML > 0 && toggle === true) {
 		workTime.innerHTML --;
-	} else if (workTime.innerHTML == 0 && breakTime.innerHTML > 0) {
+	} else if (workTime.innerHTML == 0 && breakTime.innerHTML > 0 && toggle === true) {
+		audio;
 		console.log('work done');
 		breakTime.innerHTML --;
 	} else {
 		clearInterval(count);
 		console.log('cleared');
 	}
+	
 }
 //break time controllers
 function breakDown() {
-		var value = document.getElementById('break-length');
-		if (value.innerHTML > 0){
-			value.innerHTML --;
-		}
+	toggle = false;
+	var value = document.getElementById('break-length');
+	if (value.innerHTML > 0){
+		value.innerHTML --;
+	}
 }
 
 function breakUp() {
-		var value = document.getElementById('break-length');
-		value.innerHTML ++;
+	toggle = false;
+	var value = document.getElementById('break-length');
+	value.innerHTML ++;
 }
 
 //work time controllers
 function workDown() {
+	toggle = false;
 	var value = document.getElementById('work-length');
 	if (value.innerHTML > 0){
 		value.innerHTML --;
@@ -54,6 +62,7 @@ function workDown() {
 }
 
 function workUp() {
+	toggle = false;
 	var value = document.getElementById('work-length');
 	value.innerHTML ++;
 }
