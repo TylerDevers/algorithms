@@ -11,6 +11,27 @@ pointer.addEventListener('mouseleave', function (event) {
 }, false );
 */
 
+var count;
+
+//start click controller
+function start() {
+	count = setInterval(timer, 1000);
+}
+
+//setInterval helper function
+function timer() {
+	var breakTime = document.getElementById('break-length');
+	var workTime = document.getElementById('work-length');
+	if (workTime.innerHTML > 0 ) {
+		workTime.innerHTML --;
+	} else if (workTime.innerHTML == 0 && breakTime.innerHTML > 0) {
+		console.log('work done');
+		breakTime.innerHTML --;
+	} else {
+		clearInterval(count);
+		console.log('cleared');
+	}
+}
 //break time controllers
 function breakDown() {
 		var value = document.getElementById('break-length');
@@ -36,3 +57,5 @@ function workUp() {
 	var value = document.getElementById('work-length');
 	value.innerHTML ++;
 }
+
+
