@@ -14,23 +14,38 @@ body {
 #break {
   float: left;
   font-family: monospace;
-  padding-left: 40px;
+  border: 1px solid green;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+#break p {
+	margin-top: 30%;
 }
 
 #break span {
   font-size:  30px;
 }
 
-#session {
+#work {
   float:right;
   font-family: monospace;
-  padding-right: 40px;
+  border: 1px solid lightblue;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
 
-#session span {
+#work p {
+	margin-top: 30%;
+}
+
+#work span {
   font-size:  30px;
 }
 
+/*
 #timer {
   clear:both;
   margin: 150px auto 0 auto;
@@ -42,6 +57,7 @@ body {
   border-radius: 50%;
   padding:10px;
 }
+*/
 
 .white {
   color: white;
@@ -50,4 +66,11 @@ body {
 h1 {
   font-family: Courier;
   font-size: 60px;
+}
+
+#start {
+	height: 60px;
+	width: 120px;
+	border-radius: 15px;
+	font-family: monospace;
 }

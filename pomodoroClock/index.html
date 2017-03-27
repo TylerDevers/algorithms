@@ -24,20 +24,22 @@
     <h1 class='center-inline white'>Pomodoro Clock</h1>
     <div class='center-inline'>
       <div id ='break' class='white'>
-        <p>Break Length</p>
+        <p>Break Time</p>
         <span onclick='breakDown()'> - </span><span id="break-length">0</span><span onclick='breakUp()'> + </span>
       </div>
-      
-      <div id='session' class='white'>
-        <p>Session Length</p>
-        <span onclick='sessionDown()'> - </span><span id='session-length'>0</span><span onclick='sessionUp()'> + </span>
+      <button id='start'>Start</button>
+      <div id='work' class='white'>
+        <p>Work Time</p>
+        <span onclick='workDown()'> - </span><span id='work-length'>0</span><span onclick='workUp()'> + </span>
       </div>
     </div>
+    <!--
     <div id='timer' class='center-inline white' onclick='trigger()'>
       <p>Session</p>
       <br>
       <p id='session-time'>0</p>
     </div>
+    -->
   </div>
   <script src="ext.js"></script>
 </body>
