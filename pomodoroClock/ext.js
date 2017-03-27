@@ -61,6 +61,6 @@ function workUp() {
 
 /*
  * play a sound when work is done
- * use an timer that shows seconds.
+ * use a timer that shows seconds.
  * hide work when break is counting down and vice versa
  */
