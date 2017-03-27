@@ -1,9 +1,11 @@
+centering guide
+remove button border
+:focus
 position
 margin
 display
 float
 clear 
-centering guide
 
 
 centering guide
@@ -20,6 +22,17 @@ centering guide
   }
     this will center a block element. It is short hand for setting margin left and margin right to auto. A width must also be set, other wise the width will be 100% making centering impossible.
     
+remove button border:
+	button:focus {outline:0;}
+	this css modifies the focus of the button. It will remove the standard box outline that appears after a button is clicked.
+	
+:focus :
+	focus is a psuedo class that will style an element that is targeted by the keyboard or the mouse. Combine it with box-shadow property to make buttons look pressed.
+	button:focus {
+		outline: none;
+		box-shadow: 0 0 1em gold;
+	} // now, when the button is clicked, a gold shade will appear around the button.
+	
 position: 
   types: absolute, relative, fixed, static
   
@@ -60,3 +73,5 @@ float:
 
 clear:
   the clear property is the sister property to float. setting clear will prevent the element from wrapping the elements that have float set. So instead of sitting to the right of the floated element, the cleared element will appear below.
+
+

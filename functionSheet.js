@@ -1,3 +1,4 @@
+Audio()
 setTimeout()
 clearInterval()
 setInterval()
@@ -30,6 +31,12 @@ split
 slice
 regExp
 
+Audio()
+	the Audio constructor will create an audio element. Remeber to use new with constructors and it needsto be assigned to a variable. the audio will continue to be played until stop() is called.
+		var audio = new Audio('audio_file.mp3' or 'url');
+		audio.play();
+		
+	
 setTimeout()
 	setTimeout(function, milliseconds) will call a function after the desired milliseconds have passed.
 	just like setInterval, it can be canceled with a clearTimeout(setTimeoutID)
