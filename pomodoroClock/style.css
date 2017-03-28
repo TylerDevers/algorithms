@@ -16,8 +16,8 @@ body {
   font-family: monospace;
   border: 1px solid green;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 
 #break p {
@@ -33,8 +33,8 @@ body {
   font-family: monospace;
   border: 1px solid lightblue;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 
 #work p {

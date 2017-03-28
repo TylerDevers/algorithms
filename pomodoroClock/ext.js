@@ -11,31 +11,50 @@ pointer.addEventListener('mouseleave', function (event) {
 }, false );
 */
 
-var count;
+var minutes, seconds;
 var audio = new Audio('beep-06.mp3');
 var toggle = true;
+var beep = true;
 
 //start click controller
-function start() {
+function startMinute() {
 	toggle = true;
-	count = setInterval(timer, 1000);
+	
+	minute = setInterval(minuteTimer, 60m000);
 }
 
-//setInterval helper function
-function timer() {
+function startSeconds() {
+	toggle = true;
+	seconds = setInterval(secondsTimer, 1000);
+}
+
+//setInterval helper functions
+function minuteTimer() {
 	var breakTime = document.getElementById('break-length');
 	var workTime = document.getElementById('work-length');
 	if (workTime.innerHTML > 0 && toggle === true) {
 		workTime.innerHTML --;
 	} else if (workTime.innerHTML == 0 && breakTime.innerHTML > 0 && toggle === true) {
-		audio;
-		console.log('work done');
+		if (beep === true) {
+			audio.play();
+		}
 		breakTime.innerHTML --;
+		beep = false;
 	} else {
-		clearInterval(count);
-		console.log('cleared');
+		clearInterval(seconds);
+		clearInterval(minute);
+		beep = true;
 	}
-	
+}
+
+function secondsTimer() {
+	var breakTime = document.getElementById('break-seconds');
+	var workTime = document.getElementById('work-seconds');
+	if (workTime.innerHTML == 0 && toggle === true) {
+		workTime.innerHTML = 59;
+	} else if (workTime.innerHTML > 0 && toggle === true) {
+		workTime.innerHTML --;
+	}
 }
 //break time controllers
 function breakDown() {
@@ -69,7 +88,7 @@ function workUp() {
 
 
 /*
- * play a sound when work is done
  * use a timer that shows seconds.
  * hide work when break is counting down and vice versa
+ * multiple start button clicks will trigger function multiple times
  */
