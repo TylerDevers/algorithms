@@ -25,21 +25,14 @@
     <div class='center-inline'>
       <div id ='break' class='white'>
         <p>Break Time</p>
-        <span onclick='breakDown()'> - </span><span id="break-length">0</span><span>:</span><span id='break-seconds'>00</span><span onclick='breakUp()'> + </span>
+        <span class='hand' onclick='breakDown()'> - </span><span class='default-cursor' id="break-length">0</span><span class='default-cursor' >:</span><span class='default-cursor' id='break-seconds'>0</span><span class='hand' onclick='breakUp()'> + </span>
       </div>
-      <button id='start' onclick='startSeconds()'>Start</button>
+      <button id='start' onclick='startTimer()'>Start</button>
       <div id='work' class='white'>
         <p>Work Time</p>
-        <span onclick='workDown()'> - </span><span id='work-length'>0</span><span>:</span><span id='work-seconds'>00</span><span onclick='workUp()'> + </span>
+        <span class='hand' onclick='workDown()'> - </span><span class='default-cursor' id='work-length'>0</span><span class='default-cursor' >:</span><span class='default-cursor' id='work-seconds'>0</span><span class='hand' onclick='workUp()'> + </span>
       </div>
     </div>
-    <!--
-    <div id='timer' class='center-inline white' onclick='trigger()'>
-      <p>Session</p>
-      <br>
-      <p id='session-time'>0</p>
-    </div>
-    -->
   </div>
   <script src="ext.js"></script>
 </body>

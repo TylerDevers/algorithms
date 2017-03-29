@@ -2,6 +2,14 @@ body {
   background: #333333;
 }
 
+.hand {
+	cursor: pointer;
+}
+
+.default-cursor {
+	cursor: default;
+}
+
 .center {
   width: 600px;
   margin: 0 auto;
@@ -44,20 +52,6 @@ body {
 #work span {
   font-size:  30px;
 }
-
-/*
-#timer {
-  clear:both;
-  margin: 150px auto 0 auto;
-  font-family: monospace;
-  font-size: 30px;
-  border: 1px solid green;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  padding:10px;
-}
-*/
 
 .white {
   color: white;

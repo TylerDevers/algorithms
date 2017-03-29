@@ -13,84 +13,73 @@ pointer.addEventListener('mouseleave', function (event) {
 
 var minutes, seconds;
 var audio = new Audio('beep-06.mp3');
-var toggle = true;
+var timerOn = true;
 var beep = true;
+var timerType = 'work';
 var breakMinutes = document.getElementById('break-length');
 var workMinutes = document.getElementById('work-length');
 var breakSeconds = document.getElementById('break-seconds');
 var workSeconds = document.getElementById('work-seconds');
 
-//start click controller
-function startMinute() {
-	toggle = true;
-	minutes = setInterval(minuteTimer, 60000);
+//start button click controller
+function startTimer() {
+	clearInterval(seconds);
+	//stop(audio);
+	timerType = 'work';
+	timerOn = true;
+	seconds = setInterval(timer, 1000);
 }
 
-function startSeconds() {
-	toggle = true;
-	seconds = setInterval(timer, 500);
-}
-
-//setInterval helper functions
+//setInterval helper function for startTimer()
 function timer() {
-	if (workSeconds.innerHTML == 0 && workMinutes.innerHTML > 0 && toggle === true) {
-		workSeconds.innerHTML = 59;
-		workMinutes.innerHTML --;		
-	} else if (workSeconds.innerHTML == 0 && workMinutes.innerHTML == 0 && toggle === true) {
-		clearInterval(seconds);
-	} else if (toggle === true) {
+	if (timerType == 'work' && timerOn === true) { 
+		if (workSeconds.innerHTML == 0 && workMinutes.innerHTML > 0) {
+			workSeconds.innerHTML = 59;
+			workMinutes.innerHTML --;		
+		} else if (workSeconds.innerHTML > 0 && workMinutes.innerHTML >= 0) {
 			workSeconds.innerHTML --;
-	} else if (toggle === false) {
-			clearInterval(seconds);
-			workSeconds.innerHTML = '00';
-	}
-	
-}
-
-/*
-function minuteTimer() {
-	if (workMinutes.innerHTML > 0 && toggle === true) {
-		workMinutes.innerHTML --;
-	} else if (workMinutes.innerHTML == 0 && breakMinutes.innerHTML > 0 && toggle === true) {
-		if (beep === true) {
+		} else if (workSeconds.innerHTML == 0 && workMinutes.innerHTML == 0) {
 			audio.play();
-		}
-		breakMinutes.innerHTML --;
-		beep = false;
-	} else {
-		clearInterval(seconds);
-		clearInterval(minutes);
-		beep = true;
+			timerType = 'break';
+		} 
+	} else if (timerType == 'break' && timerOn === true) {
+		if (breakSeconds.innerHTML == 0 && breakMinutes.innerHTML > 0) {
+			breakSeconds.innerHTML = 59;
+			breakMinutes.innerHTML --;		
+		} else if (breakSeconds.innerHTML > 0 && breakMinutes.innerHTML >= 0) {
+			breakSeconds.innerHTML --;
+		} else if (breakSeconds.innerHTML == 0 && breakMinutes.innerHTML == 0) {
+			timerType = 'work';
+			clearInterval(seconds);
+		}		
 	}
 }
-
-function secondsTimer() {
-	if (workSeconds.innerHTML == 0 && toggle === true && workMinutes.innerHTML > 0) {
-		workSeconds.innerHTML = 59;
-	} else if (workSeconds.innerHTML > 0 && toggle === true) {
-		workSeconds.innerHTML --;
-	}
-}
-*/
 
 //break time controllers
 function breakDown() {
-	toggle = false;
+	timerOn = false;
+	breakSeconds.innerHTML = 0;
+	workSeconds.innerHTML = 0;
 	var value = document.getElementById('break-length');
 	if (value.innerHTML > 0){
 		value.innerHTML --;
 	}
+	
 }
 
 function breakUp() {
-	toggle = false;
+	timerOn = false;
+	breakSeconds.innerHTML = 0;
+	workSeconds.innerHTML = 0;
 	var value = document.getElementById('break-length');
 	value.innerHTML ++;
 }
 
 //work time controllers
 function workDown() {
-	toggle = false;
+	timerOn = false;
+	breakSeconds.innerHTML = 0;
+	workSeconds.innerHTML = 0;
 	var value = document.getElementById('work-length');
 	if (value.innerHTML > 0){
 		value.innerHTML --;
@@ -98,16 +87,14 @@ function workDown() {
 }
 
 function workUp() {
-	toggle = false;
+	timerOn = false;
+	breakSeconds.innerHTML = 0;
+	workSeconds.innerHTML = 0;
 	var value = document.getElementById('work-length');
 	value.innerHTML ++;
 }
 
 
 /*
- * break seconds don't work
- * need to take away minute value at start of break/work countdown start.
- * use a timer that shows seconds.
- * hide work when break is counting down and vice versa
- * multiple start button clicks will trigger function multiple times
+ * 
  */
