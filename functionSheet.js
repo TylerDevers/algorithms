@@ -31,11 +31,20 @@ split
 slice
 regExp
 
+addEventListener()
+	addEventListener will target an element and trigger a function when an event happens, such as mouse interaction or tabbing into a field.
+	
+	var pointer = document.getElementsByClassName('modifier');
+
+	pointer.addEventListener("mouseover", function (event) {
+		event.target.style.color = "yellow";
+	}, false);
+	
 Audio()
 	the Audio constructor will create an audio element. Remeber to use new with constructors and it needsto be assigned to a variable. the audio will continue to be played until stop() is called.
 		var audio = new Audio('audio_file.mp3' or 'url');
-		audio.play();
-		
+		audio.play(); // note the variable must have the play method called on it.
+		stop(audio); //this will stop the audio element from playing
 	
 setTimeout()
 	setTimeout(function, milliseconds) will call a function after the desired milliseconds have passed.

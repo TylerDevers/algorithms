@@ -1,3 +1,4 @@
+cursor:
 centering guide
 remove button border
 :focus
@@ -7,7 +8,13 @@ display
 float
 clear 
 
-
+cursor:
+	applying the cursor style to a selector will change how the mouse cursor looks. the example code will change the cursor to a hand when hovering over any span elements.
+	
+	span {
+		cursor: pointer;
+	}
+	
 centering guide
   https://css-tricks.com/centering-css-complete-guide/
   
